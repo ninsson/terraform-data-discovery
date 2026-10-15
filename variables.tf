@@ -1,33 +1,34 @@
 variable "aws_region" {
   type        = string
-  description = "AWS region for resources"
+  description = "The AWS region where resources are located"
+}
+
+variable "project_id" {
+  type        = string
+  description = "The project identifier used for tagging"
 }
 
 variable "vpc_name" {
   type        = string
-  description = "Name tag for the VPC"
+  description = "The name of the VPC to discover"
 }
 
-variable "vpc_cidr" {
+variable "public_subnet_name" {
   type        = string
-  description = "CIDR block for the VPC"
+  description = "The name of the public subnet to discover"
 }
 
-variable "public_subnets" {
-  type = list(object({
-    name = string
-    az   = string
-    cidr = string
-  }))
-  description = "List of public subnet configurations"
-}
-
-variable "igw_name" {
+variable "security_group_name" {
   type        = string
-  description = "Name tag for the Internet Gateway"
+  description = "The name of the security group to discover"
 }
 
-variable "rt_name" {
+variable "instance_name" {
   type        = string
-  description = "Name tag for the public route table"
+  description = "The name tag for the EC2 instance"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "EC2 instance type"
 }
